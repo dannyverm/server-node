@@ -1,7 +1,8 @@
+let nextId=4;
 const students = [
-    { id: 1, name: 'Daniel' },
-    { id: 2, name: 'Cynthia' },
-    { id: 3, name: 'Danilo' }
+    { id: 1, name: 'Daniel', cohort:'FT15b' },
+    { id: 2, name: 'Cynthia', cohort:'FT17b' },
+    { id: 3, name: 'Danilo', cohort:'FT15b' }
 
 ]
 
@@ -16,5 +17,15 @@ module.exports = {
     },
     getStudentByName: function (name) {
         return students.filter( s => s.name.toLowerCase().includes(name.toLowerCase()));
+    },
+    addStudent: function (name,cohort) {
+      const newStudents={
+            id: nextId,
+            name,
+            cohort
+        };
+        students.push(newStudents);
+        nextId++;
+        return newStudents;
     }
 }

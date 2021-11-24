@@ -9,6 +9,7 @@ const {
 } = require('../model/model')
 
 // query /students?name=leo&lasname=...
+// para ver si un objeto es un string ----if(typeof objeto=== 'string')
 router.get('/', (req, res) => {
     const { name } = req.query;
     if (!name) return res.json(getAllStudents());
